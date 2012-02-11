@@ -3,7 +3,6 @@
 %table
   %tr
     %th Name
-    %th Body
     %th
     %th
     %th
@@ -11,7 +10,6 @@
   - @protocols.each do |protocol|
     %tr
       %td= protocol.name
-      %td= protocol.body
       %td= link_to 'Show', protocol
       %td= link_to 'Edit', edit_protocol_path(protocol)
       %td= link_to 'Destroy', protocol, :confirm => 'Are you sure?', :method => :delete
