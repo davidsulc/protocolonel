@@ -23,10 +23,15 @@ end
 
 gem 'jquery-rails'
 
-group :development, :test do
-  gem 'capybara'
-  gem 'rspec-rails'
+group :development do
   gem 'haml-rails'
+end
+
+group :test do
+  gem 'cucumber-rails'
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'rspec-rails'
 end
 
 # To use ActiveModel has_secure_password
