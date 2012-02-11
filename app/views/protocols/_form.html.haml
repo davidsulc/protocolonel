@@ -1,0 +1,16 @@
+= form_for @protocol do |f|
+  -if @protocol.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@protocol.errors.count, "error")} prohibited this protocol from being saved:"
+      %ul
+        - @protocol.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :body
+    = f.text_area :body
+  .actions
+    = f.submit 'Save'

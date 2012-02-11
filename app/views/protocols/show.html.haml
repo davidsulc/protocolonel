@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @protocol.name
+%p
+  %b Body:
+  = @protocol.body
+
+= link_to 'Edit', edit_protocol_path(@protocol)
+\|
+= link_to 'Back', protocols_path
