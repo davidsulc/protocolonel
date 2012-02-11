@@ -25,6 +25,9 @@ module HtmlSelectorsHelpers
     #  
     #  when /the header menu/
     #    ".topbar .nav"
+    
+    when /(.*) with id (\d+)/
+      "##{$1}_#{$2}"
 
     # This allows you to provide a quoted selector as the scope
     # for "within" steps as was previously the default for the

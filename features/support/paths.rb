@@ -14,6 +14,8 @@ module NavigationHelpers
     # protocols
     when /^the page for protocol "(.*)"$/
       protocol_path(Protocol.find_by_name($1))
+    when /^the edit page for protocol "(.*)"$/
+      edit_protocol_path(Protocol.find_by_name($1))
       
     when /^the (.*) index page$/
       path_components = Array($1.pluralize)

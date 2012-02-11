@@ -24,6 +24,10 @@ module JavascriptHelpers
 end
 World(JavascriptHelpers)
 
+Given /^(?:|I )am on (.+)$/ do |page_name|
+  visit path_to(page_name)
+end
+
 When /^(?:|I )press "([^"]*)"$/ do |button|
   click_button(button)
 end
@@ -32,7 +36,7 @@ When /^(.*) and (?:|I )click "OK"$/ do |step|
   click_ok_after { When step }
 end
 
-Given /^(?:|I )am on (.+)$/ do |page_name|
+When /^(?:|I )go to (.+)$/ do |page_name|
   visit path_to(page_name)
 end
 

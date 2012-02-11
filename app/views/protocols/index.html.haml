@@ -8,7 +8,7 @@
     %th
 
   - @protocols.each do |protocol|
-    %tr
+    %tr{:id => "protocol_#{protocol.id}"}
       %td= protocol.name
       %td= link_to 'Show', protocol
       %td= link_to 'Edit', edit_protocol_path(protocol)
