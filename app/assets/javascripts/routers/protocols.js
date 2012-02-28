@@ -3,9 +3,12 @@ Protocolonel.Routers.Protocols = Support.SwappingRouter.extend({
   },
 
   routes: {
-    "":          "index"
+    "":          "index",
+    "protocols":          "index"
   },
   
   index: function() {
+    var view = new Protocolonel.Views.ProtocolsIndex({ collection: Protocolonel.protocols });
+    $('body').html(view.render().el);
   }
 });
