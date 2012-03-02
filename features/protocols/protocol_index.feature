@@ -32,20 +32,24 @@ Feature: protocol index
   Scenario: protocols can be viewed from the index page
     And I follow the "Show" link for protocol "Prostate cancer"
     Then I should be on the page for protocol "Prostate cancer"
+    And I should see "Name: Prostate cancer"
 
   @javascript
   Scenario: protocols can be viewed from the index page in js
     And I follow the "Show" link for protocol "Prostate cancer"
     Then I should be on the page for protocol "Prostate cancer"
+    And I should see "Name: Prostate cancer"
 
   Scenario: protocols can be edited from the index page
     And I follow the "Edit" link for protocol "Prostate cancer"
     Then I should be on the edit page for protocol "Prostate cancer"
+    And I should see "Editing protocol"
 
   @javascript
   Scenario: protocols can be edited from the index page in js
     And I follow the "Edit" link for protocol "Prostate cancer"
     Then I should be on the edit page for protocol "Prostate cancer"
+    And I should see "Editing protocol"
 
   Scenario: protocols can be deleted from the index page
     And I follow the "Destroy" link for protocol "Prostate cancer"
