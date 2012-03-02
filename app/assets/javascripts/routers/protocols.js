@@ -4,7 +4,7 @@ Protocolonel.Routers.Protocols = Support.SwappingRouter.extend({
 
   routes: {
     "":          "index",
-    "protocols":          "index"
+    "protocols": "index"
   },
   
   index: function() {
