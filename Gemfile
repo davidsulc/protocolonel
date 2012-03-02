@@ -6,6 +6,8 @@ gem 'haml'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+gem 'backbone-on-rails'
+gem 'backbone-support'
 gem 'sqlite3'
 
 
@@ -29,6 +31,7 @@ end
 
 group :test do
   gem 'cucumber-rails'
+  gem 'launchy'
   gem 'capybara'
   gem 'database_cleaner'
   gem 'rspec-rails'
