@@ -1,0 +1,14 @@
+<p id="notice"></p>
+
+<p>
+  <b>Name:</b>
+  <%= model.escape('name') %>
+</p>
+<p>
+  <b>Body:</b>
+  <%= model.escape('body') %>
+</p>
+
+<a href="/protocols/<%= model.id %>/edit">Edit</a>
+|
+<a href="/protocols">Back</a>

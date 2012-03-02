@@ -4,8 +4,8 @@ var Protocolonel = {
   Views: {},
   Routers: {},
   init: function(protocols) {
-    new Protocolonel.Routers.Protocols();
     this.protocols = new Protocolonel.Collections.Protocols(protocols);
+    this.router = new Protocolonel.Routers.Protocols({collection: this.protocols});
     Backbone.history.start({ pushState: true });
   }
 };
