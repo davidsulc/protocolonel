@@ -1,4 +1,8 @@
 Protocolonel.Views.ProtocolShow = Backbone.View.extend({
+  events: {
+    "click a": "navigateLink"
+  },
+  
   initialize: function() {
     this.model.bind("change", this.render);
   },
@@ -6,6 +10,11 @@ Protocolonel.Views.ProtocolShow = Backbone.View.extend({
   render: function () {
     this.$el.html(JST['protocols/show']({ model: this.model }));
     return this;
+  },
+  
+  // navigate show/edit links
+  navigateLink: function(e) {
+    Protocolonel.Support.navigateLink(e);
   }
 });
 

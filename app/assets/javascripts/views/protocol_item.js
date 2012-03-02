@@ -2,7 +2,7 @@ Protocolonel.Views.ProtocolItem = Backbone.View.extend({
   tagName: "tr",
   
   events: {
-    "click a": "navigateCRUD"
+    "click a": "navigateLink"
   },
   
   initialize: function() {
@@ -16,12 +16,8 @@ Protocolonel.Views.ProtocolItem = Backbone.View.extend({
     return this;
   },
   
-  // navigate to CRUD actions when the links are clicked
-  navigateCRUD: function (e) {
-    var target = $(e.currentTarget);
-    if( ! target.attr('data-method')){ // don't change delete links
-      e.preventDefault();
-      Protocolonel.router.navigate(target.attr('href'), { trigger: true });
-    }
+  // navigate show/edit links
+  navigateLink: function(e) {
+    Protocolonel.Support.navigateLink(e);
   }
 });
