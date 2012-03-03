@@ -1,0 +1,15 @@
+<form accept-charset="UTF-8" action="<%= action %>" method="post">
+  <div class="field">
+    <label for="protocol_name">Name</label>
+    <input id="protocol_name" name="protocol[name]" size="30" type="text" value="<%= protocol.escape('name') %>" />
+  </div>
+
+  <div class="field">
+    <label for="protocol_body">Body</label>
+    <textarea cols="40" id="protocol_body" name="protocol[body]" rows="20"><%= protocol.escape('body') %></textarea>
+  </div>
+
+  <div class="actions">
+    <input name="commit" type="submit" value="Save" />
+  </div>
+</form>

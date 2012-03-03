@@ -5,9 +5,10 @@ Protocolonel.Routers.Protocols = Support.SwappingRouter.extend({
   },
 
   routes: {
-    "":              "index",
-    "protocols":     "index",
-    "protocols/:id": "show"
+    "":                   "index",
+    "protocols":          "index",
+    "protocols/:id":      "show",
+    "protocols/:id/edit": "edit"
   },
   
   index: function() {
@@ -21,6 +22,17 @@ Protocolonel.Routers.Protocols = Support.SwappingRouter.extend({
     protocol.fetch({
       success: function() {
         var view = new Protocolonel.Views.ProtocolShow({ model: protocol });
+        protocolRouter.swap(view);
+      }
+    });
+  },
+  
+  edit: function(protocolId) {
+    var protocol = this.collection.get(protocolId);
+    var protocolRouter = this;
+    protocol.fetch({
+      success: function() {
+        var view = new Protocolonel.Views.ProtocolEdit({ model: protocol });
         protocolRouter.swap(view);
       }
     });

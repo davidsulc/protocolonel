@@ -1,1 +1,3 @@
-Protocolonel.Models.Protocol = Backbone.Model.extend({});
+Protocolonel.Models.Protocol = Backbone.Model.extend({
+  urlRoot: '/protocols'
+});
