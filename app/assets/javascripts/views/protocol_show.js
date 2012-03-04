@@ -16,6 +16,11 @@ Protocolonel.Views.ProtocolShow = Backbone.View.extend({
   // navigate show/edit links
   navigateLink: function(e) {
     Protocolonel.Support.navigateLink(e);
+  },
+
+  leave: function() {
+    this.unbind();
+    this.remove();
   }
 });
 

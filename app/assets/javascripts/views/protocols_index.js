@@ -10,5 +10,10 @@ Protocolonel.Views.ProtocolsIndex = Backbone.View.extend({
       self.$('table > tbody').append(protocolItem.render().el);
     });
     return this;
+  },
+
+  leave: function() {
+    this.unbind();
+    this.remove();
   }
 });

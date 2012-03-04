@@ -42,5 +42,10 @@ Protocolonel.Views.ProtocolEdit = Support.CompositeView.extend({
       error: function() { alert("failure"); }
     });
     e.preventDefault();
+  },
+
+  leave: function() {
+    this.unbind();
+    this.remove();
   }
 });
