@@ -31,8 +31,6 @@ Feature: edit protocol
     And I should see "Protocol was successfully updated"
     And I should see "Bone cancer"
     And I should see "New instructions"
-    But I should not see "Prostate cancer"
-    And I should not see "Lorem ipsum dolor sit amet"
 
   Scenario: cancel updating protocol
     And I fill in "Name" with "Wrong name"

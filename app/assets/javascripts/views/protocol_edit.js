@@ -32,8 +32,13 @@ Protocolonel.Views.ProtocolEdit = Support.CompositeView.extend({
     var attributes = new FormAttributes(this.$('form')).attributes();
     var protocol = this.model;
     
-    this.model.save(attributes, {
-      success: function() { Protocolonel.router.navigate("/protocols/" + protocol.id, { trigger: true }); },
+    protocol.save(attributes, {
+      success: function() {
+        var view = new Protocolonel.Views.ProtocolShow({ model: protocol });
+        Protocolonel.router.swap(view);
+        $('#notice').text('Protocol was successfully updated.');
+        Protocolonel.router.navigate("/protocols/" + protocol.id);
+      },
       error: function() { alert("failure"); }
     });
     e.preventDefault();
