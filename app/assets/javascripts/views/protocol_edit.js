@@ -12,6 +12,7 @@ Protocolonel.Views.ProtocolEdit = Support.CompositeView.extend({
   render: function () {
     this.renderLayout();
     this.renderForm();
+    return this;
   },
   
   renderLayout: function () {
