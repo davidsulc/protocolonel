@@ -19,7 +19,7 @@ Protocolonel.Routers.Protocols = Support.SwappingRouter.extend({
   
   new: function() {
     var model = new Protocolonel.Models.Protocol();
-    var view = new Protocolonel.Views.ProtocolNew({ model: model });
+    var view = new Protocolonel.Views.ProtocolNew({ model: model, collection: this.collection });
     this.swap(view);
   },
 

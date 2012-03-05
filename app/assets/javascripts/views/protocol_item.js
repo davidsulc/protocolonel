@@ -2,10 +2,13 @@ Protocolonel.Views.ProtocolItem = Backbone.View.extend({
   tagName: "tr",
   
   events: {
-    "click a": "navigateLink"
+    "click a": "navigateLink",
+    'click a[data-method="delete"]': "destroy"
   },
   
   initialize: function() {
+    this.model.bind("change", this.render, this);
+    this.model.bind("destroy", this.remove, this);
   },
   
   render: function () {
@@ -19,6 +22,19 @@ Protocolonel.Views.ProtocolItem = Backbone.View.extend({
   // navigate show/edit links
   navigateLink: function(e) {
     Protocolonel.Support.navigateLink(e);
+  },
+  
+  remove: function() {
+    $(this.el).remove();
+  },
+  
+  destroy: function(e) {
+    if(confirm("Are you sure ?")){
+      this.model.destroy();
+      // TO DO : trigger event on event aggregator to display flash in parent view
+      e.preventDefault();
+      e.stopPropagation();
+    }
   },
 
   leave: function() {

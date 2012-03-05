@@ -6,9 +6,9 @@ Feature: protocol index
 
   Background:
     Given there are the following protocols:
-      | name            | body        |
-      | Prostate cancer | Placeholder |
-      | Bone cancer     | Placeholder |
+      | id | name            | body        |
+      | 1  | Prostate cancer | Placeholder |
+      | 2  | Bone cancer     | Placeholder |
     When I go to the protocol index page
 
   Scenario: protocols are displayed on the index page
@@ -54,13 +54,13 @@ Feature: protocol index
   Scenario: protocols can be deleted from the index page
     And I follow the "Destroy" link for protocol "Prostate cancer"
     Then I should be on the protocol index page
-    And I should not see "Prostate cancer"
-    But I should see "Bone cancer"
+    And protocol with name "Prostate cancer" should not exist
+    But I should see protocol with name "Bone cancer"
 
   @javascript
   Scenario: protocols can be deleted from the index page in js
     And I follow the "Destroy" link for protocol "Prostate cancer" and I click "OK"
     Then I should be on the protocol index page
-    And I should not see "Prostate cancer"
-    But I should see "Bone cancer"
+    And protocol with name "Prostate cancer" should not exist
+    But I should see protocol with name "Bone cancer"
     
