@@ -1,6 +1,6 @@
 Protocolonel.Routers.Protocols = Support.SwappingRouter.extend({
   initialize: function(options) {
-    this.el = $('#protocols');
+    this.el = $('#app');
     this.collection = options.collection;
   },
 
