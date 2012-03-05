@@ -7,12 +7,19 @@ Protocolonel.Routers.Protocols = Support.SwappingRouter.extend({
   routes: {
     "":                   "index",
     "protocols":          "index",
+    "protocols/new":      "new",
     "protocols/:id":      "show",
     "protocols/:id/edit": "edit"
   },
   
   index: function() {
     var view = new Protocolonel.Views.ProtocolsIndex({ collection: Protocolonel.protocols });
+    this.swap(view);
+  },
+  
+  new: function() {
+    var model = new Protocolonel.Models.Protocol();
+    var view = new Protocolonel.Views.ProtocolNew({ model: model });
     this.swap(view);
   },
 

@@ -1,4 +1,8 @@
 Protocolonel.Views.ProtocolsIndex = Support.CompositeView.extend({
+  events: {
+    "click a": "navigateLink"
+  },
+  
   initialize: function() {
   },
 
@@ -19,6 +23,11 @@ Protocolonel.Views.ProtocolsIndex = Support.CompositeView.extend({
       self.renderChild(row);
       self.$('table > tbody').append(row.el);
     });
+  },
+  
+  // navigate cancel link
+  navigateLink: function(e) {
+    Protocolonel.Support.navigateLink(e);
   },
 
   leave: function() {
