@@ -9,7 +9,12 @@
 <body>
 
 <%= yield %>
-<%= yield :javascript %>
+
+<%= javascript_tag do %>
+  if (typeof Protocolonel != 'undefined') {
+    Protocolonel.init(<%= @_protocols.to_json.html_safe %>);
+  }
+<% end %>
 
 </body>
 </html>

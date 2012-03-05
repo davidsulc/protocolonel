@@ -27,9 +27,4 @@
 
 <%= link_to 'New Protocol', new_protocol_path %>
 
-<%= content_for :javascript do -%>
-  <%= javascript_tag do %>
-    Protocolonel.init(<%= @protocols.to_json.html_safe %>);
-  <% end %>
-<% end -%>
 </div>
