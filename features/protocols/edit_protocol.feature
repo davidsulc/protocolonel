@@ -8,8 +8,7 @@ Feature: edit protocol
     Given there are the following protocols:
       | name            | body                       |
       | Prostate cancer | Lorem ipsum dolor sit amet |
-    And I am on the protocol index page
-    When I follow the "Edit" link for protocol "Prostate cancer"
+    And I am on the edit page for protocol "Prostate cancer"
 
   Scenario: updating protocol
     And I fill in "Name" with "Bone cancer"
