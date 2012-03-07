@@ -7,8 +7,8 @@ Protocolonel.Views.ProtocolsIndex = Support.CompositeView.extend({
     _.bindAll(this, "renderProtocols");
     _.bindAll(this, "renderNewProtocol");
     this.collection.bind("add", this.renderNewProtocol, this);
-    this.collection.bind("remove", this.renderProtocols, this);
     this.collection.bind("reset", this.renderProtocols, this);
+    this.collection.bind("remove", this.showDeleteFlash, this);
   },
 
   render: function () {
@@ -35,6 +35,10 @@ Protocolonel.Views.ProtocolsIndex = Support.CompositeView.extend({
     var row = new Protocolonel.Views.ProtocolItem({model: protocol});
     this.renderChild(row);
     this.$('table > tbody').append(row.el);
+  },
+  
+  showDeleteFlash: function () {
+    $('#flashes').hide().html('<p id="notice">Protocol was successfully deleted.</p>').fadeIn().fadeOut(5000);
   },
   
   // navigate cancel link
