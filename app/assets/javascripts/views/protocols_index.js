@@ -34,7 +34,7 @@ Protocolonel.Views.ProtocolsIndex = Support.CompositeView.extend({
   renderNewProtocol: function (protocol) {
     var row = new Protocolonel.Views.ProtocolItem({model: protocol});
     this.renderChild(row);
-    self.$('table > tbody').append(row.el);
+    this.$('table > tbody').append(row.el);
   },
   
   // navigate cancel link
