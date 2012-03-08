@@ -2,8 +2,8 @@ Protocolonel.Views.ProtocolItem = Backbone.View.extend({
   tagName: "tr",
   
   events: {
-    "click a": "navigateLink",
-    'click a[data-method="delete"]': "destroy"
+    'click a[data-method!="destroy"]': "navigateLink",
+    'click a[data-method="destroy"]': "destroy"
   },
   
   initialize: function() {
@@ -31,9 +31,9 @@ Protocolonel.Views.ProtocolItem = Backbone.View.extend({
   destroy: function(e) {
     if(confirm("Are you sure ?")){
       this.model.destroy();
-      e.preventDefault();
-      e.stopPropagation();
     }
+    e.preventDefault();
+    e.stopPropagation();
   },
 
   leave: function() {
