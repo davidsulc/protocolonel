@@ -31,7 +31,6 @@ Protocolonel.Views.ProtocolItem = Backbone.View.extend({
   destroy: function(e) {
     if(confirm("Are you sure ?")){
       this.model.destroy();
-      // TO DO : trigger event on event aggregator to display flash in parent view
       e.preventDefault();
       e.stopPropagation();
     }
