@@ -17,7 +17,27 @@ Feature: create protocol
     And I should see "Prostate cancer"
     And I should see "Protocol for prostate cancer"
 
+  @javascript
+  Scenario: creating a protocol in js
+    When I fill in "Name" with "Prostate cancer"
+    And I fill in "Body" with "Protocol for prostate cancer"
+    And I press "Save"
+    Then I should be on the page for protocol "Prostate cancer"
+    And I should see "Protocol was successfully created"
+    And I should see "Prostate cancer"
+    And I should see "Protocol for prostate cancer"
+
   Scenario: cancel creating a protocol
+    When I fill in "Name" with "Prostate cancer"
+    And I fill in "Body" with "Protocol for prostate cancer"
+    And I follow "Back"
+    Then I should be on the protocol index page
+    And I should not see "Protocol was successfully created"
+    And I should not see "Prostate cancer"
+    And I should not see "Protocol for prostate cancer"
+
+  @javascript
+  Scenario: cancel creating a protocol in js
     When I fill in "Name" with "Prostate cancer"
     And I fill in "Body" with "Protocol for prostate cancer"
     And I follow "Back"

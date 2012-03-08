@@ -32,8 +32,8 @@ When /^(?:|I )press "([^"]*)"$/ do |button|
   click_button(button)
 end
 
-When /^(.*) and (?:|I )click "OK"$/ do |step|
-  click_ok_after { When step }
+When /^(.*) and (?:|I )click "OK"$/ do |step_name|
+  click_ok_after { step step_name }
 end
 
 When /^(?:|I )go to (.+)$/ do |page_name|
